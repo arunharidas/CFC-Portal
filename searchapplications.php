@@ -27,11 +27,17 @@ error_reporting(E_ALL);
     <center><h4> Search Applications </h4></center>
     <table width="100%">
         <tr>
-            <td> <input class="form-control" name="searchname" placeholder="Name" required> </td>
-            <td> <input class="form-control" name="searchmobile" placeholder="Mobile Number" required> </td>
-            <td> <input class="form-control" name="searchservicefor" placeholder="Service sought for" required> </td>
-            <td> <input class="form-control" name="searchdepartment" placeholder="Department / Agency" required> </td>
-            <td> <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> </td>
+            <td width="200px" valign="top" align="center"> 
+                <input class="form-control" name="searchname" placeholder="Name" required>
+                <input class="form-control" name="searchmobile" placeholder="Mobile Number" required> 
+                <input class="form-control" name="searchservicefor" placeholder="Service sought for" required>
+                <input class="form-control" name="searchdepartment" placeholder="Department / Agency" required>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </td>
+            <td> </td>
+            <td valign="top">
+                Search option here
+            </td>
         </tr>
     </table>
 
