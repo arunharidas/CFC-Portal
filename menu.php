@@ -70,7 +70,7 @@
     echo '<ul>
       <li><a class="active" href="operatoradddata.php">New Application</a></li>
       <li><a href="operatorpending.php">Pending</a></li>
-      <li><a href="search.php">Search</a></li>
+      <li><a href="searchapplications.php">Search Applications</a></li>
       <li><a href="#">Profiles</a></li>
       <li><a href="changepassword.php">Change Password</a></li>
       <li><a href="#">Reports</a></li>
