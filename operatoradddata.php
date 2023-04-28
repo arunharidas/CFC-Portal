@@ -55,6 +55,38 @@
                             </tr>
                             <tr>
                                 <td valign="top">
+<<<<<<< HEAD
+=======
+                                    Gender <font color="red">*</font>
+                                </td>
+                                <td>
+                                    <select class="custom-select" required>
+                                        <option value="" selected>Choose...</option>
+                                        <option value="male">Male </option>
+                                        <option value="female">Female </option>
+                                        <option value="others">Others </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                    Age Group <font color="red">*</font>
+                                </td>
+                                <td>
+                                    <select class="custom-select" required>
+                                        <option value="" selected>Choose...</option>
+                                        <option value="below 18">Below 18 </option>
+                                        <option value="18-30">18-30 </option>
+                                        <option value="30-40">30-40 </option>
+                                        <option value="40-50">40-50 </option>
+                                        <option value="50-60">50-60 </option>
+                                        <option value="Above 60">Above 60 </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+>>>>>>> a037e68 (initial)
                                     More Details about Visitor
                                 </td>
                                 <td>
@@ -68,8 +100,13 @@
                                     Service sought for<font color="red">*</font>
                                 </td>
                                 <td>
+<<<<<<< HEAD
                                     <textarea class="form-control" name="service" rows="3" placeholder="Servie sought for"
                                         required></textarea>
+=======
+                                    <textarea class="form-control" name="service" rows="3"
+                                        placeholder="Servie sought for" required></textarea>
+>>>>>>> a037e68 (initial)
                                     <button type="button" class="btn btn-info btn-sm">Search / Import</button>
                                 </td>
                             </tr>
@@ -142,7 +179,12 @@
                                     Name of person in CFC <font color="red">*</font>
                                 </td>
                                 <td>
+<<<<<<< HEAD
                                     <input class="form-control" name="chargeCFC" placeholder="CFC in charge" required>
+=======
+                                    <input class="form-control" name="chargeCFC" placeholder="CFC in charge" required
+                                        value="<?php echo $_SESSION['name']; ?>" readonly>
+>>>>>>> a037e68 (initial)
                                 </td>
                             </tr>
                             <tr>
@@ -150,9 +192,16 @@
 
                                 </td>
                                 <td>
+<<<<<<< HEAD
                                     
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="isServiceGiven" name="isServiceGiven">
+=======
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="isServiceGiven"
+                                            name="isServiceGiven">
+>>>>>>> a037e68 (initial)
                                         <label class="custom-control-label" for="isServiceGiven">Is service
                                             given?</label>
                                     </div>
@@ -166,8 +215,13 @@
                 </td>
             </tr>
         </table>
+<<<<<<< HEAD
     <center>
     <br/>
+=======
+        <center>
+            <br />
+>>>>>>> a037e68 (initial)
 </body>
 
 </html>
