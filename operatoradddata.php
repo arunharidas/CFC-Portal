@@ -38,6 +38,7 @@
                             </tr>
                             <tr>
                                 <td valign="top" width="30%">
+                                    <selection id="gotovisitor"> </selection>
                                     Visitor Name<font color="red">*</font>
                                 </td>
                                 <td>
@@ -126,6 +127,7 @@
                             </tr>
                             <tr>
                                 <td valign="top">
+                                    <selection id="gotoservice"> </selection>
                                     Service sought for<font color="red">*</font>
                                 </td>
                                 <td>
@@ -261,7 +263,7 @@
 
                                 </td>
                                 <td>
-
+                                    <selection id="skiptosave"> </selection>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="isServiceGiven"
                                             name="isServiceGiven">
@@ -277,13 +279,16 @@
                 </td>
             </tr>
         </table>
-        <center>
-        <br />
-
-
-        <div class="fixed-bottom">
-             
-        </div>
+    </center>
+    
+    <br />
+    <div class="fixed-bottom" align="right">
+        <a href="#gotovisitor"><button class="btn btn-light btn-sm">Visitor Details</button></a>
+        <br/>
+        <a href="#gotoservice"><button class="btn btn-light btn-sm">Service Details</button></a>
+        <br/>
+        <a href="#skiptosave"><button class="btn btn-light btn-sm">Skip to bottom</button></a>
+    </div>
 </body>
 
 </html>
