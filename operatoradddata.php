@@ -84,6 +84,22 @@
                             </tr>
                             <tr>
                                 <td valign="top">
+                                    Education  <font color="red">*</font>
+                                </td>
+                                <td>
+                                    <select class="custom-select" required>
+                                        <option value="" selected>Choose...</option>
+                                        <option value="Uoto 10th">Upto 10th </option>
+                                        <option value="Plus two/Predegree">Plus two/Predegree </option>
+                                        <option value="Diploma">Diploma </option>
+                                        <option value="Graduate">Graduate </option>
+                                        <option value="Professional Degree">Professional Degree </option>
+                                        <option value="Post Graduate or above">Post Graduate or above </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
                                     More Details about Visitor
                                 </td>
                                 <td>
