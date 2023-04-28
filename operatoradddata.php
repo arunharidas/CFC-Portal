@@ -145,6 +145,15 @@
                             </tr>
                             <tr>
                                 <td valign="top">
+                                    Details of advice given
+                                </td>
+                                <td>
+                                    <textarea class="form-control" name="serviceAdvice" rows="4"
+                                        placeholder="Details of advice given"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
                                     Procedures<font color="red">*</font>
                                 </td>
                                 <td>
@@ -191,6 +200,46 @@
                             </tr>
                             <tr>
                                 <td valign="top">
+                                    Whether the data given are verified with concerned Department/Agency
+                                </td>
+                                <td>
+                                    <select name="conformdata" class="custom-select">
+                                        <option value="" selected>Choose...</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                    Whether the details of required service are available in the official website of Department/agency
+                                </td>
+                                <td>
+                                    <select name="datainofficialwebsite" class="custom-select">
+                                        <option value="" selected>Choose...</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No </option>
+                                        <option value="Incomplete">Incomplete </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                    Guided to which Office/Agency
+                                </td>
+                                <td>
+                                    <select name="guidedtooffice" class="custom-select">
+                                        <option value="" selected>Choose...</option>
+                                        <option value="LB Level office">LB Level office</option>
+                                        <option value="Taluk Level office">Taluk Level office </option>
+                                        <option value="District level office">District level office </option>
+                                        <option value="Akshaya/CSC">Akshaya/CSC </option>
+                                        <option value="Others">Others </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
                                     More Details about service
                                 </td>
                                 <td>
@@ -222,7 +271,6 @@
                                 </td>
                             </tr>
                         </table>
-
                         <br />
                         <button type="submit" class="btn btn-success">Submit Details</button>
                     </form>
@@ -230,7 +278,14 @@
             </tr>
         </table>
         <center>
-            <br />
+        <br />
+
+
+        <div class="fixed-bottom" align="right">
+            <button style="width: 150px;" class="btn btn-outline-info btn-sm">Visitor Details</button> &nbsp; <br/>  
+            <button style="width: 150px;" class="btn btn-outline-info btn-sm">Service Details</button> &nbsp; <br/>  
+            <button style="width: 150px;" class="btn btn-outline-info btn-sm">New / Save</button> &nbsp; <br/>  
+        </div>
 </body>
 
 </html>
