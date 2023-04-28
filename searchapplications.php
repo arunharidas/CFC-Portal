@@ -27,7 +27,7 @@ error_reporting(E_ALL);
     <center><h4> Search Applications </h4></center>
     <table width="100%">
         <tr>
-            <td> <input class="form-control" name="Name" placeholder="Username" required> </td>
+            <td> <input class="form-control" name="Name" placeholder="searchname" required> </td>
         </tr>
     </table>
 

@@ -129,8 +129,12 @@ error_reporting(E_ALL);
                     <input class="form-control" name="name" placeholder="Full Name" required>
                     <br />
                     <button type="submit" class="btn btn-success">Create User</button>
+<<<<<<< HEAD
 >>>>>>> a037e68 (initial)
                 </form>
+=======
+                </form> 
+>>>>>>> 3de37f6 ( d)
 
             </td>
         </tr>
