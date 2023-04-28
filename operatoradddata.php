@@ -55,8 +55,6 @@
                             </tr>
                             <tr>
                                 <td valign="top">
-<<<<<<< HEAD
-=======
                                     Gender <font color="red">*</font>
                                 </td>
                                 <td>
@@ -86,7 +84,6 @@
                             </tr>
                             <tr>
                                 <td valign="top">
->>>>>>> a037e68 (initial)
                                     More Details about Visitor
                                 </td>
                                 <td>
@@ -100,13 +97,8 @@
                                     Service sought for<font color="red">*</font>
                                 </td>
                                 <td>
-<<<<<<< HEAD
-                                    <textarea class="form-control" name="service" rows="3" placeholder="Servie sought for"
-                                        required></textarea>
-=======
                                     <textarea class="form-control" name="service" rows="3"
                                         placeholder="Servie sought for" required></textarea>
->>>>>>> a037e68 (initial)
                                     <button type="button" class="btn btn-info btn-sm">Search / Import</button>
                                 </td>
                             </tr>
@@ -179,12 +171,8 @@
                                     Name of person in CFC <font color="red">*</font>
                                 </td>
                                 <td>
-<<<<<<< HEAD
-                                    <input class="form-control" name="chargeCFC" placeholder="CFC in charge" required>
-=======
                                     <input class="form-control" name="chargeCFC" placeholder="CFC in charge" required
                                         value="<?php echo $_SESSION['name']; ?>" readonly>
->>>>>>> a037e68 (initial)
                                 </td>
                             </tr>
                             <tr>
@@ -192,16 +180,10 @@
 
                                 </td>
                                 <td>
-<<<<<<< HEAD
-                                    
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="isServiceGiven" name="isServiceGiven">
-=======
 
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="isServiceGiven"
                                             name="isServiceGiven">
->>>>>>> a037e68 (initial)
                                         <label class="custom-control-label" for="isServiceGiven">Is service
                                             given?</label>
                                     </div>
@@ -215,13 +197,8 @@
                 </td>
             </tr>
         </table>
-<<<<<<< HEAD
-    <center>
-    <br/>
-=======
         <center>
             <br />
->>>>>>> a037e68 (initial)
 </body>
 
 </html>
