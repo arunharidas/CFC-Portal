@@ -58,7 +58,7 @@
                                     Gender <font color="red">*</font>
                                 </td>
                                 <td>
-                                    <select class="custom-select" required>
+                                    <select name="gender" class="custom-select" required>
                                         <option value="" selected>Choose...</option>
                                         <option value="male">Male </option>
                                         <option value="female">Female </option>
@@ -71,7 +71,7 @@
                                     Age Group <font color="red">*</font>
                                 </td>
                                 <td>
-                                    <select class="custom-select" required>
+                                    <select name="agegroup" class="custom-select" required>
                                         <option value="" selected>Choose...</option>
                                         <option value="below 18">Below 18 </option>
                                         <option value="18-30">18-30 </option>
@@ -87,7 +87,7 @@
                                     Education  <font color="red">*</font>
                                 </td>
                                 <td>
-                                    <select class="custom-select" required>
+                                    <select name="education" class="custom-select" required>
                                         <option value="" selected>Choose...</option>
                                         <option value="Uoto 10th">Upto 10th </option>
                                         <option value="Plus two/Predegree">Plus two/Predegree </option>
@@ -95,6 +95,22 @@
                                         <option value="Graduate">Graduate </option>
                                         <option value="Professional Degree">Professional Degree </option>
                                         <option value="Post Graduate or above">Post Graduate or above </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                    Profession <font color="red">*</font>
+                                </td>
+                                <td>
+                                    <select name="profession" class="custom-select" required>
+                                        <option value="" selected>Choose...</option>
+                                        <option value="Self Employed">Self Employed </option>
+                                        <option value="Govt/Public sector">Govt/Public sector </option>
+                                        <option value="Private Sector">Private Sector </option>
+                                        <option value="Skilled worker">Skilled worker </option>
+                                        <option value="Unskilled worker">Unskilled worker </option>
+                                        <option value="Others">Others </option>
                                     </select>
                                 </td>
                             </tr>
