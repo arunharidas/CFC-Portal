@@ -281,10 +281,8 @@
         <br />
 
 
-        <div class="fixed-bottom" align="right">
-            <button style="width: 150px;" class="btn btn-outline-info btn-sm">Visitor Details</button> &nbsp; <br/>  
-            <button style="width: 150px;" class="btn btn-outline-info btn-sm">Service Details</button> &nbsp; <br/>  
-            <button style="width: 150px;" class="btn btn-outline-info btn-sm">New / Save</button> &nbsp; <br/>  
+        <div class="fixed-bottom">
+             
         </div>
 </body>
 
