@@ -282,15 +282,13 @@
     </center>
     
     <br /><br /><br /><br /><br /><br /><br /><br />
-    
+    <!---
     <div class="fixed-bottom" align="right">
         <a href="#gotovisitor"><button class="btn btn-light btn-sm">Visitor Details</button></a>
-        <br/>
         <a href="#gotoservice"><button class="btn btn-light btn-sm">Service Details</button></a>
-        <br/>
         <a href="#skiptosave"><button class="btn btn-light btn-sm">Skip to bottom</button></a>
     </div>
-    
+    -->
 </body>
 
 </html>
