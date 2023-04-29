@@ -38,9 +38,9 @@ error_reporting(E_ALL);
 
 
         // Generate Rancor Password
-        function generateRandomPassword($length = 10) 
+        function generateRandomPassword($length = 8) 
         {
-            $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_?';
+            $chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ23456789';
             $password = '';
             for ($i = 0; $i < $length; $i++) 
             {

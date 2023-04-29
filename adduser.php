@@ -33,20 +33,31 @@ error_reporting(E_ALL);
             <center> <h5> Users </h5> </center>
                 <form method="post">
                     <?php
+                        // --------------- Reset password button ----------------
                         if(isset($_POST['resetpw'])) {
-                            $deleteid=$_POST['resetpw'];
-                            echo '<div class="alert alert-success" role="alert">';
+                            $changepwid=$_POST['resetpw'];
+                            echo '<div class="alert alert-primary" role="alert">';
                                 echo '<form method="post">';
                                     echo 'Are you sure to reset password? ';
-                                    echo '<button type="submit" name="conformdelete" value="'.$deleteid.'" class="btn btn-danger btn-sm"> Conform </button> ';
+                                    echo '<button type="submit" name="conformpw" value="'.$changepwid.'" class="btn btn-danger btn-sm"> Conform </button> ';
                                     echo "&nbsp;&nbsp";
                                     echo '<button type="submit" name="cancel"  class="btn btn-secondary btn-sm"> Cancel </button> ';
                                 echo '</form>';
                             echo '</div>';
                         }
-                        if(isset($_POST['conformdelete'])){
-                            $deleteid = $_POST['conformdelete'];
-                            echo $deleteid;
+                        // --------------- Conform Password Reset ---------------
+                        if(isset($_POST['conformpw'])){
+                            $changepwid = $_POST['conformpw'];
+                            $password=generateRandomPassword();
+                            echo '<div class="alert alert-success" role="alert">';
+                                echo '<form method="post">';
+                                    echo '<h5>Password Changed successfully</h5>';
+                                    echo 'Password : '.$password;
+                                    echo '<br/>';
+                                    echo '<button type="submit" name="conformdelete" value="'.$changepwid.'" class="btn btn-success btn-sm"> Ok </button> ';
+                                echo '</form>';
+                            echo '</div>';
+                            
                         }
                     ?>
                     <table class="table table-bordered" width="100%">
