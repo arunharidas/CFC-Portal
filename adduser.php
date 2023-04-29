@@ -33,19 +33,7 @@ error_reporting(E_ALL);
             <center> <h5> Users </h5> </center>
                 <form method="post">
                     <?php
-                        // -------------- Create New User ------------------------
-                        if(isset($_POST['createuser'])){
-                            require_once("config.php");
-                            $username = $_POST['username'];
-                            $sql='SELECT * USERS WHERE username = ' . $username ;
-                            $result=mysqli_query($db, $sql) or die("Error");
-                            $row = mysqli_fetch_array($result);
-                            $count = mysqli_num_rows($result);
-                            if($count==0){
-                                
-                            }
                         
-                        }
                         
                         // --------------- Reset password button ----------------
                         if(isset($_POST['resetpw'])) {
@@ -109,6 +97,36 @@ error_reporting(E_ALL);
             <td> &nbsp; </td>
             <td valign="top" width="30%">
                 <center> <h5> Create User </h5> </center>
+                <?php
+                    // -------------- Create New User ------------------------
+                    if(isset($_POST['createuser'])){
+                        require_once("config.php");
+                        $username = $_POST['username'];
+                        $sql='SELECT * FROM users WHERE username = "' . $username .'";' ;
+                        $result=mysqli_query($db, $sql) or die("Error");
+                        $row = mysqli_fetch_array($result);
+                        $count = mysqli_num_rows($result);
+                        if($count==0){
+                            $newpassword=generateRandomPassword();
+
+
+                            echo '<div class="alert alert-success" role="alert">';
+                                echo "<h5> User Created successfully</h5> ";
+                                echo "Username : ";
+                                echo "<br/> Password : " . $newpassword;
+                            echo '</div>';
+                        }
+                        else {
+                            echo '<div class="alert alert-danger" role="alert">';
+                                echo "Error : username already exist";
+                            echo '</div>';
+                        }
+                    
+                    }
+
+
+
+                ?>
                 <form method="post">
                 <select class="custom-select">
                         <?php
@@ -131,7 +149,7 @@ error_reporting(E_ALL);
                     <br/>
                     <input type="hidden" name="usertype" value="gp-operator">
                     <br />
-                    <input class="form-control" name="username" pattern="[a-zA-Z0-9_]+" placeholder="Username" required>
+                    <input class="form-control" name="username" pattern="[a-zA-Z0-9_@]+" placeholder="Username" required>
                     <br />
                     <input class="form-control" name="name" placeholder="Full Name" required>
                     <br />
