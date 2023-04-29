@@ -48,11 +48,11 @@ error_reporting(E_ALL);
                         // --------------- Conform Password Reset ---------------
                         if(isset($_POST['conformpw'])){
                             $changepwid = $_POST['conformpw'];
-                            $password=generateRandomPassword();
+                            $newpassword=generateRandomPassword();
                             echo '<div class="alert alert-success" role="alert">';
                                 echo '<form method="post">';
                                     echo '<h5>Password Changed successfully</h5>';
-                                    echo 'Password : '.$password;
+                                    echo 'Password : '.$newpassword;
                                     echo '<br/>';
                                     echo '<button type="submit" name="conformdelete" value="'.$changepwid.'" class="btn btn-success btn-sm"> Ok </button> ';
                                 echo '</form>';
