@@ -87,6 +87,12 @@ error_reporting(E_ALL);
                     <br />
                     <input class="form-control" name="name" placeholder="Full Name" required>
                     <br />
+                    <select name="status" class="custom-select" required>
+                        <option value="" selected>Choose...</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive </option>
+                    </select>
+                    <br/>
                     <button type="submit" class="btn btn-success">Create User</button>
                 </form> 
 
