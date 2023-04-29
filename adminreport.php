@@ -63,9 +63,31 @@ error_reporting(E_ALL);
             </td>
         </tr>
     </table>
+    <?php
+        if (empty($_POST)){  
+            echo '<form method="post"> <table width="100" class="table table-hover"> 
+                <tr>
+                    <th> District </th>
+                    <th> Received </th>
+                    <th> Service given </th>
+                    <th> Pending </th>
+                    <th> View </th>
+                </tr>';
+                $sql = "SELECT district, COUNT(district)  as countdis, SUM(servicegiven) as countsgiven FROM applications GROUP BY district;";
+                $result = mysqli_query($db,$sql) or die("Error geting data");
+                while($row = mysqli_fetch_array($result)){
+                    $pending=$row['countdis']-$row['countsgiven'];
+                    echo "<tr><td>".$row["district"]."</td><td>".$row['countdis']."</td> <td>".$row['countsgiven']."</td> <td>".$pending."</td>";
+                    echo '<td><button type="submit" class="btn btn-outline-info"> &gt;&gt;&gt; </button</td>';    
 
+                    echo "</tr>";
+                }
 
+            echo '</table> </form>';
 
+        }
+
+    ?>
     
 
 
