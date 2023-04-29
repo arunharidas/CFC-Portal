@@ -49,6 +49,11 @@ error_reporting(E_ALL);
                         if(isset($_POST['conformpw'])){
                             $changepwid = $_POST['conformpw'];
                             $newpassword=generateRandomPassword();
+                            
+                            require_once("config.php");
+                            $sql='UPDATE users SET password = "' . $newpassword . '" WHERE id = ' . $changepwid ;
+                            $result=mysqli_query($db, $sql) or die("Error");
+                            
                             echo '<div class="alert alert-success" role="alert">';
                                 echo '<form method="post">';
                                     echo '<h5>Password Changed successfully</h5>';
