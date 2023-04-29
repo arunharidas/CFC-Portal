@@ -33,6 +33,20 @@ error_reporting(E_ALL);
             <center> <h5> Users </h5> </center>
                 <form method="post">
                     <?php
+                        // -------------- Create New User ------------------------
+                        if(isset($_POST['createuser'])){
+                            require_once("config.php");
+                            $username = $_POST['username'];
+                            $sql='SELECT * USERS WHERE username = ' . $username ;
+                            $result=mysqli_query($db, $sql) or die("Error");
+                            $row = mysqli_fetch_array($result);
+                            $count = mysqli_num_rows($result);
+                            if($count==0){
+                                
+                            }
+                        
+                        }
+                        
                         // --------------- Reset password button ----------------
                         if(isset($_POST['resetpw'])) {
                             $changepwid=$_POST['resetpw'];
@@ -122,13 +136,13 @@ error_reporting(E_ALL);
                     <input class="form-control" name="name" placeholder="Full Name" required>
                     <br />
                     <select name="status" class="custom-select" required>
-                        <option value="" selected>Choose...</option>
+                        <option value="" selected>---Select Status---</option>
                         <option value="Active">Active</option>
                         <option value="Inactive">Inactive </option>
                     </select>
                     <br/>
                     <br/>
-                    <button type="submit" class="btn btn-success">Create User</button>
+                    <button name="createuser" type="submit" class="btn btn-success">Create User</button>
                 </form> 
 
             </td>
