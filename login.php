@@ -25,6 +25,8 @@
                 $_SESSION['name']=$row['name'];
                 $_SESSION['office']=$row['office'];
                 $_SESSION['district']=$row['district'];
+                $_SESSION['user_role']=$myusertype;
+                /*
                 if($myusertype=="Admin")
                 {
                     echo "ADM";
@@ -44,7 +46,9 @@
                 {
                     showerror("Unknown error happend : \n Please contact administrator ");
                 } 
+                */
                 header("location:home.php");
+                
             }
             else 
             {

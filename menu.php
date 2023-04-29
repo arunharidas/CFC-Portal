@@ -44,7 +44,7 @@
 
 <body>
     <?php
-    if($_SESSION['user_role']=='admin')
+    if($_SESSION['user_role']=='Admin')
     {
         echo '<ul>
             <li><a class="active" href="officesettings.php">Office Settings</a></li>
@@ -76,6 +76,14 @@
       <li><a href="#">Reports</a></li>
       <li><a href="logout.php">Logout</a></li>
     </ul>';
+    }
+    else if($_SESSION['user_role']=='st-approver')
+    {
+        echo '<ul>
+            <li><a href="adminreport.php">Admin Reports</a></li>
+            <li><a href="changepassword.php">Change Password</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>';
     }
     ?>
 </body>
