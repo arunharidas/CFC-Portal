@@ -43,7 +43,7 @@ error_reporting(E_ALL);
             $counthead="State";
         }
     ?>
-    <table width="100%" class="table table-bordered">
+    <table width="100%" class="table">
         <tr>
             <td width="25%" align="center" valign="middle">
                 <h5> Count of </h5>
