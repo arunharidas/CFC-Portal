@@ -42,6 +42,8 @@ error_reporting(E_ALL);
             $totalpending = $totalfileprocessed - $totalservicegiven;
             $counthead="State";
         }
+
+
     ?>
     <table width="100%" class="table">
         <tr>
@@ -78,8 +80,7 @@ error_reporting(E_ALL);
                 while($row = mysqli_fetch_array($result)){
                     $pending=$row['countdis']-$row['countsgiven'];
                     echo "<tr><td>".$row["district"]."</td><td>".$row['countdis']."</td> <td>".$row['countsgiven']."</td> <td>".$pending."</td>";
-                    echo '<td><button type="submit" class="btn btn-outline-info"> &gt;&gt;&gt; </button</td>';    
-
+                    echo '<td><button name="dtsel" type="submit" class="btn btn-outline-info value="'. $row["district"] .'"> &gt;&gt;&gt; </button</td>';    
                     echo "</tr>";
                 }
 
