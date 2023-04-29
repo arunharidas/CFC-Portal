@@ -45,7 +45,7 @@ error_reporting(E_ALL);
 
 
     ?>
-    <table width="100%" class="table">
+    <table width="100%" class="table table-dark">
         <tr>
             <td width="25%" align="center" valign="middle">
                 <h5> Count of </h5>
