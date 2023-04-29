@@ -38,11 +38,15 @@ error_reporting(E_ALL);
                             echo '<div class="alert alert-success" role="alert">';
                                 echo '<form method="post">';
                                     echo 'Are you sure to reset password? ';
-                                    echo '<button type="submit" name="conformdelete" value="deleteid" class="btn btn-danger btn-sm"> Conform </button> ';
+                                    echo '<button type="submit" name="conformdelete" value="'.$deleteid.'" class="btn btn-danger btn-sm"> Conform </button> ';
                                     echo "&nbsp;&nbsp";
                                     echo '<button type="submit" name="cancel"  class="btn btn-secondary btn-sm"> Cancel </button> ';
                                 echo '</form>';
                             echo '</div>';
+                        }
+                        if(isset($_POST['conformdelete'])){
+                            $deleteid = $_POST['conformdelete'];
+                            echo $deleteid;
                         }
                     ?>
                     <table class="table table-bordered" width="100%">
