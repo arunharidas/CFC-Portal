@@ -23,6 +23,17 @@ error_reporting(E_ALL);
     <?php
         require("header.html");
         require("menu.php");
+        if(isset($_POST['resetpw'])) {
+            $deleteid=$_POST['resetpw'];
+            echo '<div class="alert alert-success" role="alert">';
+                echo '<form method="post">';
+                    echo 'Are you sure to reset password? ';
+                    echo '<button type="submit" name="conformdelete" value="deleteid" class="btn btn-danger btn-sm"> Conform </button> ';
+                    echo "&nbsp;&nbsp";
+                    echo '<button type="submit" name="cancel"  class="btn btn-secondary btn-sm"> Cancel </button> ';
+                echo '</form>';
+            echo '</div>';
+        }
     ?>
 </head>
 
@@ -31,31 +42,33 @@ error_reporting(E_ALL);
         <tr>
             <td valign="top">
             <center> <h5> Users </h5> </center>
-                <table class="table table-bordered" width="100%">
-                    <tr>
-                        <th> District </th>
-                        <th> Office </th>
-                        <th> Name </th>
-                        <th> Username </th>
-                        <th> Status </th>
-                        <th> Password <br/> Reset </th>
-                        <th> Edit </th>
-                    </tr>
-                    <?php
-                        require_once('config.php');
-                        $district=$_SESSION['district'];
-                        $office = $_SESSION['office'];
-                        if($_SESSION['user_role']=="gp-verifier")                       // Check GP User
-                        {
-                            $sql = "SELECT * FROM users WHERE office='$office' AND usertype='gp-operator';";
-                        }
-                        $result = mysqli_query($db,$sql) or die("Error");
-                        echo "<tr>";
-                        while($row = mysqli_fetch_array($result)){
-                            echo "<tr><td>".$row["district"]."</td><td>". $row["office"] ."</td><td>". $row["name"] ."</td><td>". $row["username"] ."</td><td>". $row["status"] ."</td> <td><button type='submit' class='btn btn-danger btn-sm'> &nbsp;&gt;&nbsp; </button> </td><td><button type='button' class='btn btn-primary btn-sm'> &nbsp;&gt;&nbsp; </button></td></tr>";
-                        }
-                        echo "</table>";
-                    ?>
+                <form method="post">
+                    <table class="table table-bordered" width="100%">
+                        <tr>
+                            <th> District </th>
+                            <th> Office </th>
+                            <th> Name </th>
+                            <th> Username </th>
+                            <th> Status </th>
+                            <th> Password <br/> Reset </th>
+                            <th> Edit </th>
+                        </tr>
+                        <?php
+                            require_once('config.php');
+                            $district=$_SESSION['district'];
+                            $office = $_SESSION['office'];
+                            if($_SESSION['user_role']=="gp-verifier")                       // Check GP User
+                            {
+                                $sql = "SELECT * FROM users WHERE office='$office' AND usertype='gp-operator';";
+                            }
+                            $result = mysqli_query($db,$sql) or die("Error");
+                            echo "<tr>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr><td>".$row["district"]."</td><td>". $row["office"] ."</td><td>". $row["name"] ."</td><td>". $row["username"] ."</td><td>". $row["status"] ."</td> <td><button type='submit' name='resetpw' class='btn btn-danger btn-sm' value='". $row['id'] . "' > &nbsp;&gt;&nbsp; </button> </td><td><button type='button' class='btn btn-primary btn-sm'> &nbsp;&gt;&nbsp; </button></td></tr>";
+                            }
+                            echo "</table>";
+                        ?>
+                    </form>
                 <!-- Display users list here -->
             </td>
             <td> &nbsp; </td>
@@ -93,6 +106,7 @@ error_reporting(E_ALL);
                         <option value="Inactive">Inactive </option>
                     </select>
                     <br/>
+                    <br/>
                     <button type="submit" class="btn btn-success">Create User</button>
                 </form> 
 
@@ -101,7 +115,7 @@ error_reporting(E_ALL);
     </table>
 
 
-
+<br/>
 </body>
 
 </html>
