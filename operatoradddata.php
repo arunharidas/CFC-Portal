@@ -274,14 +274,15 @@
                             </tr>
                         </table>
                         <br />
-                        <button type="submit" class="btn btn-success">Submit Details</button>
+                        <button type="submit" class="btn btn-success"> Submit Details </button>
                     </form>
                 </td>
             </tr>
         </table>
     </center>
     
-    <br />
+    <br /><br /><br /><br /><br /><br /><br /><br />
+    
     <div class="fixed-bottom" align="right">
         <a href="#gotovisitor"><button class="btn btn-light btn-sm">Visitor Details</button></a>
         <br/>
@@ -289,6 +290,7 @@
         <br/>
         <a href="#skiptosave"><button class="btn btn-light btn-sm">Skip to bottom</button></a>
     </div>
+    
 </body>
 
 </html>
