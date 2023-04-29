@@ -103,17 +103,29 @@ error_reporting(E_ALL);
                         require_once("config.php");
                         $username = $_POST['username'];
                         $sql='SELECT * FROM users WHERE username = "' . $username .'";' ;
-                        $result=mysqli_query($db, $sql) or die("Error");
+                        $result=mysqli_query($db, $sql) or die("Error in checking user exist");
                         $row = mysqli_fetch_array($result);
                         $count = mysqli_num_rows($result);
                         if($count==0){
                             $newpassword=generateRandomPassword();
+                            $name=$_POST['name'];
+                            $status=$_POST['status'];
 
+                            // If User is gp level
+                            if($_SESSION['usertype']="gp-verifier"){
+                                $newusertype="gp-operator";
+                                $office=$_SESSION['office'];
+                                $district=$_SESSION['district'];
+                                
+                            }
+                            $sql="INSERT INTO users VALUES(NULL,'$username','$newpassword','$newusertype','$name','$office','$district','$status');" ;
+                            $result=mysqli_query($db, $sql) or die("Error in saving user");
 
                             echo '<div class="alert alert-success" role="alert">';
                                 echo "<h5> User Created successfully</h5> ";
-                                echo "Username : ";
+                                echo "Username : ".$username;
                                 echo "<br/> Password : " . $newpassword;
+                                echo '<br/><form method="post"><button type="submit" class="btn btn-success">Ok</button></form>';
                             echo '</div>';
                         }
                         else {
