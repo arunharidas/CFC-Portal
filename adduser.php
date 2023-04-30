@@ -23,6 +23,7 @@ error_reporting(E_ALL);
     <?php
         require("header.html");
         require("menu.php");
+        require_once("config.php");
     ?>
 </head>
 
@@ -52,7 +53,7 @@ error_reporting(E_ALL);
                             $changepwid = $_POST['conformpw'];
                             $newpassword=generateRandomPassword();
                             
-                            require_once("config.php");
+                            
                             $sql='UPDATE users SET password = "' . $newpassword . '" WHERE id = ' . $changepwid ;
                             $result=mysqli_query($db, $sql) or die("Error");
                             echo '<div class="alert alert-success" role="alert">';
@@ -65,6 +66,7 @@ error_reporting(E_ALL);
                             echo '</div>';
                             
                         }
+                        
 
 
                     ?>
@@ -138,11 +140,25 @@ error_reporting(E_ALL);
                     
                     }
 
-                    //  ---------------------------- Update user details --------------
-                    if(isset($_POST['edituser'])){
-                        // 
+                    
+
+                    // ----------------------------- Get Data for editing -------------
+                    if(isset($_POST['edit'])){
+                        /*$username = $_POST['username'];
+                        $sql='SELECT * FROM users WHERE username = "' . $username .'";' ;
+                        $result=mysqli_query($db, $sql) or die("Error in checking user exist");
+                        $row = mysqli_fetch_array($result);
+                        $count = mysqli_num_rows($result);
+                        $newpassword=generateRandomPassword();
+                        $name=$_POST['name'];
+                        $status=$_POST['status'];*/
                     }
 
+
+                    //  ---------------------------- Update user details --------------
+                    if(isset($_POST['edituser'])){
+                        
+                    }
 
 
                 ?>
