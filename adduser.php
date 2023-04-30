@@ -87,7 +87,7 @@ error_reporting(E_ALL);
                             $result = mysqli_query($db,$sql) or die("Error");
                             echo "<tr>";
                             while($row = mysqli_fetch_array($result)){
-                                echo "<tr><td>".$row["district"]."</td><td>". $row["office"] ."</td><td>". $row["name"] ."</td><td>". $row["username"] ."</td><td>". $row["status"] ."</td> <td><button type='submit' name='resetpw' class='btn btn-danger btn-sm' value='". $row['id'] . "' > &nbsp;&gt;&nbsp; </button> </td><td><button type='button' class='btn btn-primary btn-sm'> &nbsp;&gt;&nbsp; </button></td></tr>";
+                                echo "<tr><td>".$row["district"]."</td><td>". $row["office"] ."</td><td>". $row["name"] ."</td><td>". $row["username"] ."</td><td>". $row["status"] ."</td> <td><button type='submit' name='resetpw' class='btn btn-danger btn-sm' value='". $row['id'] . "' > &nbsp;&gt;&nbsp; </button> </td><td><button type='submit' class='btn btn-primary btn-sm' name='edit' value='". $row['id'] . "'> &nbsp;&gt;&nbsp; </button></td></tr>";
                             }
                             echo "</table>";
                         ?>
@@ -172,7 +172,14 @@ error_reporting(E_ALL);
                     </select>
                     <br/>
                     <br/>
-                    <button name="createuser" type="submit" class="btn btn-success">Create User</button>
+                    <?php
+                        if (empty($_POST['edit'])) {
+                            echo'<button name="createuser" type="submit" class="btn btn-success">Create User</button>';
+                        }
+                        else{
+                        echo'<button name="edituser" type="submit" class="btn btn-success">Update User</button>';
+                        }
+                    ?>
                 </form> 
 
             </td>
