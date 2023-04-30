@@ -65,6 +65,8 @@ error_reporting(E_ALL);
                             echo '</div>';
                             
                         }
+
+
                     ?>
                     <table class="table table-bordered" width="100%">
                         <tr>
@@ -136,6 +138,11 @@ error_reporting(E_ALL);
                     
                     }
 
+                    //  ---------------------------- Update user details --------------
+                    if(isset($_POST['edituser'])){
+                        // 
+                    }
+
 
 
                 ?>
@@ -161,7 +168,14 @@ error_reporting(E_ALL);
                     <br/>
                     <input type="hidden" name="usertype" value="gp-operator">
                     <br />
-                    <input class="form-control" name="username" pattern="[a-zA-Z0-9_@]+" placeholder="Username" required>
+                    <?php
+                        if (empty($_POST['edit'])) {
+                            echo'<input class="form-control" name="username" pattern="[a-zA-Z0-9_@]+" placeholder="Username" required>';
+                        }
+                        else{
+                            echo'<input class="form-control" name="username" pattern="[a-zA-Z0-9_@]+" placeholder="Username" required readonly>';
+                        }
+                    ?>
                     <br />
                     <input class="form-control" name="name" placeholder="Full Name" required>
                     <br />
@@ -178,6 +192,7 @@ error_reporting(E_ALL);
                         }
                         else{
                         echo'<button name="edituser" type="submit" class="btn btn-success">Update User</button>';
+                        echo $_POST['edit'];
                         }
                     ?>
                 </form> 
