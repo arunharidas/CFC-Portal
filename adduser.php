@@ -202,7 +202,7 @@ error_reporting(E_ALL);
                         }
                     ?>
                     <br />
-                    <input class="form-control" name="name" placeholder="Full Name" required value=<?php echo $varfullname; ?>>
+                    <input class="form-control" name="name" placeholder="Full Name" required value="<?php echo $varfullname; ?>">
                     <br />
                     <select name="status" class="custom-select" required>
                         <option value="" selected>---Select Status---</option>
