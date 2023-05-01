@@ -80,7 +80,7 @@
     else if($_SESSION['user_role']=='st-approver')
     {
         echo '<ul>
-            <li><a href="adminreport.php">Admin Reports</a></li>
+            <li><a href="admindashboard.php">Admin Dashboard</a></li>
             <li><a href="changepassword.php">Change Password</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>';

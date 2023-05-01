@@ -33,6 +33,7 @@
             $informationinofficialweb="";
             $guidedto="";
             $servicemoredetails="";
+            $filenote="";
 
         }
         else{                                // get post data
@@ -40,6 +41,7 @@
             $date = $_POST['date'];
             $visitorname = $_POST['name'];
             $visitormobile = $_POST['mobile'];
+            $visitorgender = $_POST['gender'];
             $visiordetails = $_POST['visitorDetails'];
             $servicefor = $_POST['service'];
             $servicedepartment = $_POST['department'];

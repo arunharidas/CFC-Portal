@@ -23,7 +23,7 @@ error_reporting(E_ALL);
 </head>
 
 <body>
-    <center> <h4> Admin Report <h4> </center>
+    <center> <h4> Admin Dashboard <h4> </center>
     <?php
         require_once("config.php");
         
@@ -41,6 +41,19 @@ error_reporting(E_ALL);
             $totalservicegiven = $row[0];
             $totalpending = $totalfileprocessed - $totalservicegiven;
             $counthead="State";
+        }
+        else if(isset($_POST['dtsel'])){
+            $district=$_POST['dtsel'];
+            $sql = "SELECT COUNT(*) FROM applications WHERE district='".$district."';";
+            $result = mysqli_query($db,$sql) or die("Error"); 
+            $row = mysqli_fetch_array($result);
+            $totalfileprocessed = $row[0];
+            $sql = "SELECT COUNT(*) FROM applications WHERE servicegiven = 1 AND district='".$district."';";
+            $result = mysqli_query($db,$sql) or die("Error"); 
+            $row = mysqli_fetch_array($result);
+            $totalservicegiven = $row[0];
+            $totalpending = $totalfileprocessed - $totalservicegiven;
+            $counthead=$district;
         }
 
 
@@ -75,17 +88,36 @@ error_reporting(E_ALL);
                     <th> Pending </th>
                     <th> View </th>
                 </tr>';
-                $sql = "SELECT district, COUNT(district)  as countdis, SUM(servicegiven) as countsgiven FROM applications GROUP BY district;";
+                $sql = "SELECT district, COUNT(district)  as countdis, SUM(servicegiven) as countsgiven FROM applications GROUP BY district ORDER BY countsgiven DESC;";
                 $result = mysqli_query($db,$sql) or die("Error geting data");
                 while($row = mysqli_fetch_array($result)){
                     $pending=$row['countdis']-$row['countsgiven'];
                     echo "<tr><td>".$row["district"]."</td><td>".$row['countdis']."</td> <td>".$row['countsgiven']."</td> <td>".$pending."</td>";
-                    echo '<td><button name="dtsel" type="submit" class="btn btn-outline-info value="'. $row["district"] .'"> &gt;&gt;&gt; </button</td>';    
+                    echo '<td><button  type="submit" name="dtsel" value="'.$row['district'].'" class="btn btn-outline-info value="'. $row["district"] .'"> &gt;&gt;&gt; </button</td>';    
                     echo "</tr>";
                 }
 
             echo '</table> </form>';
+        }
+        else if(isset($_POST['dtsel'])){
+            echo '<form method="post"> <table width="100" class="table table-hover"> 
+                <tr>
+                    <th> Office </th>
+                    <th> Received </th>
+                    <th> Service given </th>
+                    <th> Pending </th>
+                    <th> View </th>
+                </tr>';
+                $sql = "SELECT office, COUNT(office)  as countgp, SUM(servicegiven) as countsgiven FROM applications WHERE district='".$counthead."' GROUP BY office ORDER BY countsgiven DESC;";
+                $result = mysqli_query($db,$sql) or die("Error geting data");
+                while($row = mysqli_fetch_array($result)){
+                    $pending=$row['countgp']-$row['countsgiven'];
+                    echo "<tr><td>".$row["office"]."</td><td>".$row['countgp']."</td> <td>".$row['countsgiven']."</td> <td>".$pending."</td>";
+                    echo '<td><button  type="submit" name="dtsel" class="btn btn-outline-info value="'. $row["office"] .'"> &gt;&gt;&gt; </button</td>';    
+                    echo "</tr>";
+                }
 
+            echo '</table> </form>';
         }
 
     ?>
