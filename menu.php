@@ -43,6 +43,7 @@
 </head>
 
 <body>
+<div class="d-print-none">
     <?php
     if($_SESSION['user_role']=='Admin')
     {
@@ -86,6 +87,7 @@
         </ul>';
     }
     ?>
+</div>
 </body>
 
 </html>
