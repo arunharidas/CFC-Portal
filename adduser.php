@@ -52,8 +52,6 @@ error_reporting(E_ALL);
                         if(isset($_POST['conformpw'])){
                             $changepwid = $_POST['conformpw'];
                             $newpassword=generateRandomPassword();
-                            
-                            
                             $sql='UPDATE users SET password = "' . $newpassword . '" WHERE id = ' . $changepwid ;
                             $result=mysqli_query($db, $sql) or die("Error");
                             echo '<div class="alert alert-success" role="alert">';
@@ -141,23 +139,29 @@ error_reporting(E_ALL);
                     }
 
                     
-
+                    $varfullname="";
                     // ----------------------------- Get Data for editing -------------
                     if(isset($_POST['edit'])){
-                        /*$username = $_POST['username'];
-                        $sql='SELECT * FROM users WHERE username = "' . $username .'";' ;
-                        $result=mysqli_query($db, $sql) or die("Error in checking user exist");
+                        $sql='SELECT * FROM users WHERE id = "' . $_POST['edit'] .'";' ;
+                        $result=mysqli_query($db, $sql) or die("Error geting user data");
                         $row = mysqli_fetch_array($result);
-                        $count = mysqli_num_rows($result);
-                        $newpassword=generateRandomPassword();
-                        $name=$_POST['name'];
-                        $status=$_POST['status'];*/
+                        $varfullname = $row['name'];
+                        $varusername = $row['username'];
+                        $editid=$_POST['edit'];
                     }
 
 
                     //  ---------------------------- Update user details --------------
                     if(isset($_POST['edituser'])){
-                        
+                        $name=$_POST['name'];
+                        $status=$_POST['status'];
+                        $id=$_POST['userid'];
+                        $sql="UPDATE users SET name='$name', status='$status' WHERE id = $id;" ;
+                        $result=mysqli_query($db, $sql) or die("Error geting user data");
+                        echo '<div class="alert alert-success" role="alert">';
+                            echo " User details edited successfully ";
+                            echo '<br/><form method="post"><button type="submit" class="btn btn-success">Ok</button></form>';
+                        echo '</div>';
                     }
 
 
@@ -182,6 +186,11 @@ error_reporting(E_ALL);
                         ?>
                     </select>
                     <br/>
+                    <?php
+                        if (!empty($_POST['edit'])) {
+                            echo'<input type="hidden" name="userid" value="'. $editid .'"';
+                        }
+                    ?>
                     <input type="hidden" name="usertype" value="gp-operator">
                     <br />
                     <?php
@@ -189,11 +198,11 @@ error_reporting(E_ALL);
                             echo'<input class="form-control" name="username" pattern="[a-zA-Z0-9_@]+" placeholder="Username" required>';
                         }
                         else{
-                            echo'<input class="form-control" name="username" pattern="[a-zA-Z0-9_@]+" placeholder="Username" required readonly>';
+                            echo'<input class="form-control" name="username" pattern="[a-zA-Z0-9_@]+" placeholder="Username" required readonly value="'. $varusername .'">';
                         }
                     ?>
                     <br />
-                    <input class="form-control" name="name" placeholder="Full Name" required>
+                    <input class="form-control" name="name" placeholder="Full Name" required value=<?php echo $varfullname; ?>>
                     <br />
                     <select name="status" class="custom-select" required>
                         <option value="" selected>---Select Status---</option>
@@ -208,7 +217,6 @@ error_reporting(E_ALL);
                         }
                         else{
                         echo'<button name="edituser" type="submit" class="btn btn-success">Update User</button>';
-                        echo $_POST['edit'];
                         }
                     ?>
                 </form> 
