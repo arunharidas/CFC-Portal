@@ -11,7 +11,8 @@
     <?php
         require("header.html");
         require("menu.php");
-        if(empty($_POST)){
+        if(empty($_POST) || isset($_POST['savedata'])){
+            $editmode=false;
             $date = date("d/m/Y");
             $visitorname="";
             $visitormobile="";
@@ -35,6 +36,7 @@
 
         }
         else{                                // get post data
+            $editmode=true;
             $date = $_POST['date'];
             $visitorname = $_POST['name'];
             $visitormobile = $_POST['mobile'];
@@ -328,7 +330,14 @@
                             </tr>
                         </table>
                         <br />
-                        <button type="submit" class="btn btn-success" name="savedata"> Submit Details </button>
+                        <?php
+                            if($editmode=true){
+                                echo '<button type="submit" class="btn btn-success" name="updatedata"> Submit Details </button>';
+                            }
+                            else {
+                                echo '<button type="submit" class="btn btn-success" name="savedata"> Submit Details </button>';
+                            }
+                        ?>
                     </form>
                 </td>
             </tr>
