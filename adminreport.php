@@ -45,8 +45,8 @@ error_reporting(E_ALL);
 
 
     ?>
-    <table width="100%" class="table table-dark">
-        <tr>
+    <table width="100%" class="table">
+        <tr class="table-primary">
             <td width="25%" align="center" valign="middle">
                 <h5> Count of </h5>
                 <h3> <?php echo $counthead; ?> </h3>
