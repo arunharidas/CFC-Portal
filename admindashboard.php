@@ -55,6 +55,19 @@ error_reporting(E_ALL);
             $totalpending = $totalfileprocessed - $totalservicegiven;
             $counthead=$district;
         }
+        else if(isset($_POST['gpsel'])){
+            $gpoffice=$_POST['gpsel'];
+            $sql = "SELECT COUNT(*) FROM applications WHERE office='".$gpoffice."';";
+            $result = mysqli_query($db,$sql) or die("Error"); 
+            $row = mysqli_fetch_array($result);
+            $totalfileprocessed = $row[0];
+            $sql = "SELECT COUNT(*) FROM applications WHERE servicegiven = 1 AND office='".$gpoffice."';";
+            $result = mysqli_query($db,$sql) or die("Error"); 
+            $row = mysqli_fetch_array($result);
+            $totalservicegiven = $row[0];
+            $totalpending = $totalfileprocessed - $totalservicegiven;
+            $counthead=$gpoffice;
+        }
 
 
     ?>
@@ -93,7 +106,7 @@ error_reporting(E_ALL);
                 while($row = mysqli_fetch_array($result)){
                     $pending=$row['countdis']-$row['countsgiven'];
                     echo "<tr><td>".$row["district"]."</td><td>".$row['countdis']."</td> <td>".$row['countsgiven']."</td> <td>".$pending."</td>";
-                    echo '<td><button  type="submit" name="dtsel" value="'.$row['district'].'" class="btn btn-outline-info value="'. $row["district"] .'"> &gt;&gt;&gt; </button</td>';    
+                    echo '<td><button  type="submit" name="dtsel" value="'.$row['district'].'" class="btn btn-outline-info value="'. $row["district"] .'"> &gt;&gt;&gt; </button></td>';    
                     echo "</tr>";
                 }
 
@@ -113,13 +126,15 @@ error_reporting(E_ALL);
                 while($row = mysqli_fetch_array($result)){
                     $pending=$row['countgp']-$row['countsgiven'];
                     echo "<tr><td>".$row["office"]."</td><td>".$row['countgp']."</td> <td>".$row['countsgiven']."</td> <td>".$pending."</td>";
-                    echo '<td><button  type="submit" name="dtsel" class="btn btn-outline-info value="'. $row["office"] .'"> &gt;&gt;&gt; </button</td>';    
+                    echo '<td><button  type="submit" name="gpsel" value="'.$row['office'].'" class="btn btn-outline-info value="'. $row["office"] .'"> &gt;&gt;&gt; </button></td>';    
                     echo "</tr>";
                 }
 
             echo '</table> </form>';
         }
-
+        else if(isset($_POST['gpsel'])){
+            echo "Display GP Application details here";
+        }
     ?>
     
 
