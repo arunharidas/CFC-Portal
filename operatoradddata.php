@@ -11,6 +11,32 @@
     <?php
         require("header.html");
         require("menu.php");
+        if(!isset($_POST)){
+            $date = date("d/m/Y");
+            $visitorname="";
+            $visitormobile="";
+            $visitorgender="";
+            $visitoragegroup="";
+            $visitoreducation="";
+            $visitorprofession="";
+            $visitordetailsmore="";
+            $servicefor="";
+            $servicedepartment="";
+            $serviceadvice="";
+            $serviceprocedures="";
+            $servicedocuments="";
+            $servicefee="";
+            $informationsource="";
+            $informationurl="";
+            $informationverified="";
+            $informationinofficialweb="";
+            $guidedto="";
+            $servicemoredetails="";
+
+        }
+        else{               // get data when editing
+
+        }
     ?>
 </head>
 
@@ -29,7 +55,6 @@
                                 </td>
                                 <td>
                                     <?php
-                                        $date = date("d/m/Y");
                                         echo $date;
                                     ?>
                                     <input type="hidden" name="date" value='<?php echo $date; ?>'>
