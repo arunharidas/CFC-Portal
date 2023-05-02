@@ -133,7 +133,29 @@ error_reporting(E_ALL);
             echo '</table> </form>';
         }
         else if(isset($_POST['gpsel'])){
-            echo "Display GP Application details here";
+            echo '<form method="post"> <table width="100" class="table table-hover"> 
+                <tr>
+                    <th> ID </th>
+                    <th> Name </th>
+                    <th> Service for </th>
+                    <th> Service given? </th>
+                    <th> View </th>
+                </tr>';
+                $sql = "SELECT id, visitorname, servicefor, servicegiven from applications where office='".$counthead."';";
+                $result = mysqli_query($db,$sql) or die("Error geting data");
+                while($row = mysqli_fetch_array($result)){
+                    if ($row['servicegiven']==true){
+                        $servicegiven="Yes";
+                    }
+                    else{
+                        $servicegiven="No";
+                    }
+                    echo "<tr><td>".$row["id"]."</td><td>".$row['visitorname']."</td> <td>".$row['servicefor']."</td><td>".$servicegiven."</td> ";
+                    echo '<td><button  type="submit" name="applicationsel" value="'.$row['id'].'" class="btn btn-outline-info value="'. $row["id"] .'"> &gt;&gt;&gt; </button></td>';    
+                    echo "</tr>";
+                }
+
+            echo '</table> </form>';
         }
     ?>
     
