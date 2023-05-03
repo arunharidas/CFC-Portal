@@ -22,20 +22,19 @@
             $visitoragegroup="";
             $visitoreducation="";
             $visitorprofession="";
-            $visitordetailsmore="";
+            $visitordetails="";
             $servicefor="";
             $servicedepartment="";
             $serviceadvice="";
             $serviceprocedures="";
-            $servicedocuments="";
-            $servicefee="";
-            $informationsource="";
-            $informationurl="";
+            $listofdocuments="";
+            $feedetails="";
+            $source="";
+            $websiteurl="";
             $informationverified="";
             $informationinofficialweb="";
             $guidedto="";
             $servicemoredetails="";
-            $filenote="";
 
         }
         else if(isset($_POST['savedata'])){                                // get post data
@@ -64,7 +63,7 @@
             $servicegiven = isset($_POST['isServiceGiven'])? 1 : 0;
             $district = $_SESSION['district'];
             $office = $_SESSION['office'];
-            $filenote = "";
+            $fvdtowiki = $_POST['fvdtowiki'];
 
             
         }
@@ -202,7 +201,9 @@
                                 <td>
                                     <textarea class="form-control" name="service" rows="3"
                                         placeholder="Servie sought for"></textarea>
-                                    <button type="submit" name="getfromwiki" class="btn btn-info btn-sm">Search / Import</button>
+                                    <?php
+                                        // require("getdatatoapplication.php"); //------------------  ------------
+                                    ?>
                                 </td>
                             </tr>
                             <tr>
@@ -323,6 +324,17 @@
                                 <td>
                                     <input class="form-control" name="chargeCFC" placeholder="CFC in charge" required
                                         value="<?php echo $_SESSION['name']; ?>" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Recommend to public database?
+                                </td>
+                                <td>
+                                    <select name="fvdtowiki" class="custom-select">
+                                        <option value="Yes">Yes</option>
+                                        <option value="No" selected>No </option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
