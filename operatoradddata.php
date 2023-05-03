@@ -44,14 +44,21 @@
             $visitorname = $_POST['name'];
             $visitormobile = $_POST['mobile'];
             $visitorgender = $_POST['gender'];
+            $visitoragegroup = $_POST['agegroup'];
+            $visitoreducation = $_POST['education'];
+            $visitorprofession = $_POST['profession'];
             $visiordetails = $_POST['visitorDetails'];
             $servicefor = $_POST['service'];
             $servicedepartment = $_POST['department'];
+            $serviceadvice=$_POST['serviceadvice'];
             $serviceprocedures = $_POST['procedures'];
             $listofdocuments = $_POST['documents'];
             $feedetails = $_POST['feedetails'];
             $source = $_POST['source'];
             $websiteurl = $_POST['sourceMore'];
+            $informationverified = $_POST['conformdata'];
+            $informationinofficialweb = $_POST['datainofficialwebsite'];
+            $guidedto = $_POST['guidedtooffice'];
             $servicedetails = $_POST['serviceDetails'];
             $chargecfc = $_POST['chargeCFC'];
             $servicegiven = isset($_POST['isServiceGiven'])? 1 : 0;
@@ -212,7 +219,7 @@
                                     Details of advice given
                                 </td>
                                 <td>
-                                    <textarea class="form-control" name="serviceAdvice" rows="4"
+                                    <textarea class="form-control" name="serviceadvice" rows="4"
                                         placeholder="Details of advice given"></textarea>
                                 </td>
                             </tr>
