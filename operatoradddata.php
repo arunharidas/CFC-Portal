@@ -70,7 +70,7 @@
         // -----------------Save Data
         if(isset($_POST['savedata'])){
             require_once('config.php');
-            $sql = "INSERT INTO applications VALUES(NULL,'$date','$visitorname','$visitormobile','$visiordetails','$servicefor', '$servicedepartment', '$serviceprocedures', '$listofdocuments', '$feedetails', '$source', '$websiteurl', '$servicedetails', '$chargecfc', '$servicegiven', '$district', '$office', '$filenote');";
+            $sql = "INSERT INTO applications VALUES(NULL,'$date','$visitorname','$visitormobile','$visitorgender','$visitoragegroup','$visitoreducation','$visitorprofession','$visiordetails','$servicefor', '$servicedepartment','$serviceadvice', '$serviceprocedures', '$listofdocuments', '$feedetails', '$source', '$websiteurl','$informationverified','$informationinofficialweb','$guidedto', '$servicedetails', '$chargecfc', '$servicegiven', '$district', '$office', '$fvdtowiki');";
             $result = mysqli_query($db,$sql) or die("Error");
             echo '<div class="d-print-none">';
             echo '<div class="alert alert-success" role="alert">';
