@@ -133,7 +133,7 @@ error_reporting(E_ALL);
             echo '</table> </form>';
         }
         else if(isset($_POST['gpsel'])){
-            echo '<form method="post"> <table width="100" class="table table-hover"> 
+            echo '<form method="post" action="applicationdata.php"> <table width="100" class="table table-hover"> 
                 <tr>
                     <th> ID </th>
                     <th> Name </th>
