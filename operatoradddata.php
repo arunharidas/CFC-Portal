@@ -127,7 +127,7 @@
                                     Gender <font color="red">*</font>
                                 </td>
                                 <td>
-                                    <select name="gender" class="custom-select" required>
+                                    <select name="gender" class="custom-select">
                                         <option value="" selected>Choose...</option>
                                         <option value="male">Male </option>
                                         <option value="female">Female </option>
@@ -140,7 +140,7 @@
                                     Age Group <font color="red">*</font>
                                 </td>
                                 <td>
-                                    <select name="agegroup" class="custom-select" required>
+                                    <select name="agegroup" class="custom-select">
                                         <option value="" selected>Choose...</option>
                                         <option value="below 18">Below 18 </option>
                                         <option value="18-30">18-30 </option>
@@ -156,7 +156,7 @@
                                     Education  <font color="red">*</font>
                                 </td>
                                 <td>
-                                    <select name="education" class="custom-select" required>
+                                    <select name="education" class="custom-select">
                                         <option value="" selected>Choose...</option>
                                         <option value="Uoto 10th">Upto 10th </option>
                                         <option value="Plus two/Predegree">Plus two/Predegree </option>
@@ -172,7 +172,7 @@
                                     Profession <font color="red">*</font>
                                 </td>
                                 <td>
-                                    <select name="profession" class="custom-select" required>
+                                    <select name="profession" class="custom-select">
                                         <option value="" selected>Choose...</option>
                                         <option value="Self Employed">Self Employed </option>
                                         <option value="Govt/Public sector">Govt/Public sector </option>
