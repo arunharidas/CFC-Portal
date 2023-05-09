@@ -26,7 +26,7 @@ error_reporting(E_ALL);
     <center>
         <h3> Pending Applcations </h3>
     </center>
-    <form action="operatoradddata.php" methode="post">
+    <form action="operatoradddata.php" method="post">
         <table class="table table-hover">
             <tr>
                 <th> ID </th>
@@ -43,7 +43,7 @@ error_reporting(E_ALL);
                 $result = mysqli_query($db,$sql) or die("Error");
                 echo "<tr>";
                 while($row = mysqli_fetch_array($result)){
-                    print "<tr><td>".$row["id"]."</td><td>". $row["visitorname"] ."</td><td>". $row["visitormobile"] ."</td><td>". $row["servicefor"] ."</td><td>". "<a href=''><button type='submit' name='edit' value=". $row["id"] . " class='btn btn-outline-info'>Select</button></a>" ."</td></tr>";
+                    print "<tr><td>".$row["id"]."</td><td>". $row["visitorname"] ."</td><td>". $row["visitormobile"] ."</td><td>". $row["servicefor"] ."</td><td>". "<button type='submit' name='editdata' value='". $row["id"] . "' class='btn btn-outline-info'>Select</button>" ."</td></tr>";
                 }
                 print "</table>";
             ?>

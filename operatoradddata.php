@@ -36,6 +36,10 @@
             $guidedto="";
             $servicemoredetails="";
         }
+        if(isset($_POST['editdata'])){                                  // get data for editing
+              $a = $_POST['editdata'];
+              echo $a;
+        } 
         else if(isset($_POST['savedata'])){                                // get post data
             $editmode=true;
             $date = $_POST['date'];
