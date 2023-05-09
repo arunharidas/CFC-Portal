@@ -15,6 +15,7 @@
             $editmode=false;
         }
         if(empty($_POST)){
+            $editmode=false;
             $date = date("d/m/Y");
             $visitorname="";
             $visitormobile="";
@@ -36,12 +37,11 @@
             $guidedto="";
             $servicemoredetails="";
         }
-        if(isset($_POST['editdata'])){                                  // get data for editing
-              $a = $_POST['editdata'];
-              echo $a;
+        else if(isset($_POST['editdata'])){                                  // get data for editing
+              $editmode=true;
         } 
         else if(isset($_POST['savedata'])){                                // get post data
-            $editmode=true;
+            $editmode=false;
             $date = $_POST['date'];
             $visitorname = $_POST['name'];
             $visitormobile = $_POST['mobile'];
@@ -357,13 +357,23 @@
                         </table>
                         <br />
                         <?php
-                            if(empty($_POST) || isset($_POST['savedata'])){
+                            if($editmode==false){
                                 echo '<button type="submit" class="btn btn-success" name="savedata"> Save Details </button>';
                                 
                             }
                             else {
                                 echo '<button type="submit" class="btn btn-success" name="updatedata"> Submit Details </button>';
                             }
+                        
+                            /*
+                            if(empty($_POST) || isset($_POST['savedata'])){
+                                echo '<button type="submit" class="btn btn-success" name="savedata"> Save Details </button>';
+                                
+                            }
+                            else {
+                                echo '<button type="submit" class="btn btn-success" name="updatedata"> Update Details </button>';
+                            }
+                        */
                         ?>
                     </form>
                 </td>
