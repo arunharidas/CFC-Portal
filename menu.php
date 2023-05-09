@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
     <?php
         include("config.php");
         require("base.php");
@@ -40,9 +36,6 @@
     }
     </style>
 
-</head>
-
-<body>
 <div class="d-print-none">
     <?php
     if($_SESSION['user_role']=='Admin')
@@ -88,11 +81,3 @@
     }
     ?>
 </div>
-</body>
-
-</html>
-
-
-
-
-</head>
