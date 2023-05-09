@@ -35,7 +35,6 @@
             $informationinofficialweb="";
             $guidedto="";
             $servicemoredetails="";
-
         }
         else if(isset($_POST['savedata'])){                                // get post data
             $editmode=true;
